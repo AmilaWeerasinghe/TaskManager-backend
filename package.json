@@ -4,15 +4,28 @@
   "description": "task-management-backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha **/**.test.js",
     "dev": "nodemon index.js"
   },
   "author": "Amila Weerasinghe",
   "license": "ISC",
   "dependencies": {
+    "@sinonjs/referee-sinon": "^11.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "jsverify": "^0.8.4",
+    "knuth-shuffle": "^1.0.8",
     "mysql2": "^3.6.3",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "tap": "^18.5.7"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.2.0",
+    "sinon": "^17.0.1",
+    "sinon-chai": "^3.7.0",
+    "sinon-express-mock": "^2.2.1",
+    "supertest": "^6.3.3"
   }
 }

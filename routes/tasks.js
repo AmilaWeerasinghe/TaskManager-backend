@@ -3,6 +3,19 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
+// Validation middleware
+const validateTaskFields = (req, res, next) => {
+  const { title, description, priority, status } = req.body;
+
+  if (!title || !priority || !status) {
+    return res.status(400).json({ error: 'Title, priority, and status are required fields' });
+  }
+
+  // Add more specific validation as needed
+
+  next();
+};
+
 router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM tasks');
@@ -13,7 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', validateTaskFields, async (req, res) => {
   const { title, description, priority, status } = req.body;
 
   try {
@@ -30,8 +43,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Express route for updating a task
-router.put('/:id', async (req, res) => {
+router.put('/:id', validateTaskFields, async (req, res) => {
   const { title, description, priority, status } = req.body;
   const taskId = req.params.id;
 
@@ -47,7 +59,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-
 router.delete('/:id', async (req, res) => {
   const taskId = req.params.id;
 
@@ -61,4 +72,3 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
- 
