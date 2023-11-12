@@ -34,7 +34,7 @@ describe('POST /tasks', () => {
 
     const response = await request(app).post('/tasks').send(taskData);
     expect(response.status).toBe(400);
-    expect(response.body.error).toBe('Title, priority, and status are required fields');
+    expect(response.body.error).toBe('Title is a required fields');
   });
 });
 

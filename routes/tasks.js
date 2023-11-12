@@ -1,4 +1,3 @@
-// routes/tasks.js
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
@@ -7,11 +6,18 @@ const db = require('../db');
 const validateTaskFields = (req, res, next) => {
   const { title, description, priority, status } = req.body;
 
-  if (!title || !priority || !status) {
-    return res.status(400).json({ error: 'Title, priority, and status are required fields' });
+  if (!title) {
+    return res.status(400).json({ error: 'Title is a required field' });
   }
-
-  // Add more specific validation as needed
+  if (!description) {
+    return res.status(400).json({ error: 'Description is a required field' });
+  }
+  if (!priority) {
+    return res.status(400).json({ error: 'Priority is a required field' });
+  }
+  if (!status) {
+    return res.status(400).json({ error: 'Status is a required field' });
+  }
 
   next();
 };

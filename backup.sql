@@ -37,7 +37,7 @@ CREATE TABLE `tasks` (
   `priority` varchar(255) DEFAULT NULL,
   `status` varchar(20) DEFAULT 'todo',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (2,'test 2','test',NULL,NULL),(6,'test 3','test dse','medium','inProgress'),(7,'test 7','test ding',NULL,NULL),(8,'test 671','testn','medium','todo'),(9,'test 41','test 4 dest','medium','inProgress'),(10,'test task 40',NULL,'medium','inProgress'),(12,'test task 557','test ing descu','Low','inProgress'),(15,'test task','test description','Low','inProgress');
+INSERT INTO `tasks` VALUES (2,'test 2','test','high','todo'),(6,'test 3','test dse','medium','inProgress'),(7,'test 3','test dse','high','inProgress'),(8,'test 671','testn','medium','todo'),(9,'test 41','test 4 dest','medium','inProgress'),(10,'test task 40',NULL,'medium','inProgress'),(12,'test task 557','test ing descu','Low','inProgress'),(15,'test task','test description','Low','inProgress'),(17,'test new','new','low','inProgress');
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-12 20:27:29
+-- Dump completed on 2023-11-12 20:49:24
