@@ -30,6 +30,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Express route for updating a task
 router.put('/:id', async (req, res) => {
   const { title, description, priority, status } = req.body;
   const taskId = req.params.id;
@@ -45,6 +46,7 @@ router.put('/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 router.delete('/:id', async (req, res) => {
   const taskId = req.params.id;
